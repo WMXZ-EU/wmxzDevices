@@ -1,0 +1,17 @@
+{
+	"name": "wmxzDevices",
+	"frameworks": "Arduino",
+	"platforms": "Teensy",
+	"keywords": "SGTL5000, CS5361, LTC1564, compass",
+	"description": "WMXZ Device Library",
+	"version": "1.0.0",
+	"authors":
+	{	"name": "Walter Zimmer",
+		"maintainer": true
+	},
+	"repository":
+	{	"type": "git",
+		"url": "https://github.com/wmxz-eu/wmxzDevices.git"
+	},
+    "examples": "examples/*/*.ino"
+}
