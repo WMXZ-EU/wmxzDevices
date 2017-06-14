@@ -27,15 +27,13 @@
  */
 
 
-#define N_BITS 32
-#define FSAMP 48000
 extern "C" int iscl[];
 
-void c_ICS43432::init(int32_t *buffer, uint32_t nbuf)
+void c_ICS43432::init(int32_t fsamp, int32_t *buffer, uint32_t nbuf)
 {
   i2s_init();
   
-  float fsamp = i2s_speedConfig(ICS43432_DEV,N_BITS, FSAMP);
+  float fs = i2s_speedConfig(ICS43432_DEV,N_BITS, fsamp);
 //  Serial.printf("Fsamp requested: %.3f kHz  got %.3f kHz\n\rCoefficients: %d %d %d\n\r" ,
 //        FSAMP/1000.0f, fsamp/1000.0f, iscl[0], iscl[1], iscl[2]);
   

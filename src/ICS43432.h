@@ -4,10 +4,12 @@
 #ifndef ICS42432_H
 #define ICS43432_H
 
+#define N_BITS 32
+
 class c_ICS43432
 {
   public:
-  void init(int32_t *buffer, uint32_t nbuf);
+  void init(int32_t fsamp, int32_t *buffer, uint32_t nbuf);
   void start(void);
   void stop(void);
 };
