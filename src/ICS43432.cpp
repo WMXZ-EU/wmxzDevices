@@ -29,19 +29,21 @@
 
 extern "C" int iscl[];
 
-void c_ICS43432::init(int32_t fsamp, int32_t *buffer, uint32_t nbuf)
+uint16_t c_ICS43432::init(int32_t fsamp, int32_t *buffer, uint32_t nbuf)
 {
   i2s_init();
   
   float fs = i2s_speedConfig(ICS43432_DEV,N_BITS, fsamp);
   Serial.printf("Fsamp requested: %.3f kHz  got %.3f kHz\n\rCoefficients: %d %d %d\n\r" ,
         fsamp/1000.0f, fs/1000.0f, iscl[0], iscl[1], iscl[2]);
+  if(fs<1.0f) return 0;
   
   i2s_config(1, N_BITS, I2S_RX_2CH, 0);
   i2s_configurePorts(2);
 
   DMA_init();
   i2s_setupInput(buffer,nbuf,2,5); //port, prio (8=normal)
+  return 1;
 }
 
 void c_ICS43432::start(void)
