@@ -9,7 +9,7 @@
 class c_ICS43432
 {
   public:
-  uint16_t init(int32_t fsamp, int32_t *buffer, uint32_t nbuf);
+  uint32_t init(int32_t fsamp, int32_t *buffer, uint32_t nbuf);
   void start(void);
   void stop(void);
 };
