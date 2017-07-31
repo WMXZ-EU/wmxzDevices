@@ -27,8 +27,6 @@
  */
 
 
-extern "C" int iscl[];
-
 uint32_t c_ICS43432::init(int32_t fsamp, int32_t *buffer, uint32_t nbuf)
 {
   i2s_init();
